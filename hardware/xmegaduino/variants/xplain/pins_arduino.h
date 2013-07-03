@@ -92,6 +92,7 @@ static const uint8_t A15 = 15;
 // these arrays map port names (e.g. port B) to the
 // appropriate addresses for various functions (e.g. reading
 // and writing)
+
 const uint16_t PROGMEM port_to_PGM[] = {
 	NOT_A_PORT,
 	(uint16_t) &PORTA,
@@ -107,15 +108,12 @@ const uint16_t PROGMEM port_to_PGM[] = {
 
 const uint8_t PROGMEM digital_pin_to_port_PGM[] = {
 	// PORTLIST
-	REPEAT8(PA), //  0 -  7
-	REPEAT8(PB), //  8 - 15
-	REPEAT8(PC), // 16 - 23
-	REPEAT8(PD), // 24 - 31
-	REPEAT8(PE), // 32 - 39
-	REPEAT8(PF), // 40 - 47
-	REPEAT8(PH), // 48 - 55
-	REPEAT8(PJ), // 56 - 63
-	REPEAT8(PK), // 64 - 71
+	REPEAT8(PA), // Header
+	REPEAT8(PB), // Pot and Speaker
+	REPEAT8(PC), // USARTC0 connected to USB on 2&3
+	REPEAT8(PD), // Header
+	REPEAT8(PE), // LEDs
+	REPEAT8(PF), // Switches
 };
 
 const uint8_t PROGMEM digital_pin_to_bit_mask_PGM[] = {
@@ -131,17 +129,10 @@ const uint8_t PROGMEM digital_pin_to_bit_mask_PGM[] = {
 };
 
 const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
-	REPEAT8(NOT_ON_TIMER), // PORT A
-	REPEAT8(NOT_ON_TIMER), // PORT B
-	TIMER_C0A, // PORT C
-	TIMER_C0B,
-	TIMER_C0C,
-	TIMER_C0D,
-	TIMER_C1A,
-	TIMER_C1B,
-	NOT_ON_TIMER,
-	NOT_ON_TIMER,
-	TIMER_D0A, // PORT D
+	REPEAT8(NOT_ON_TIMER), // PORT A Header
+	REPEAT8(NOT_ON_TIMER), // PORT B Pot and Speaker
+	REPEAT8(NOT_ON_TIMER), // PORT C USARTC0 to USB on 2&3
+	TIMER_D0A, // PORT D Header
 	TIMER_D0B,
 	TIMER_D0C,
 	TIMER_D0D,
@@ -149,7 +140,7 @@ const uint8_t PROGMEM digital_pin_to_timer_PGM[] = {
 	TIMER_D1B,
 	NOT_ON_TIMER,
 	NOT_ON_TIMER,
-	TIMER_E0A, // PORT E
+	TIMER_E0A, // PORT E LEDs
 	TIMER_E0B,
 	TIMER_E0C,
 	TIMER_E0D,
@@ -206,10 +197,15 @@ const TC1_t* PROGMEM timer_to_tc1_PGM[] = {
 	NULL,
 	NULL,
 	NULL,
-
+	// TCE1 not defined on all xmegas
+#if defined(PORTH)
 	&TCE1,
 	&TCE1,
-};
+#else
+	NULL,
+	NULL,
+#endif
+	};
 
 const uint8_t PROGMEM timer_to_channel_PGM[] = {
 	NOT_ON_TIMER,
@@ -246,7 +242,7 @@ const uint8_t PROGMEM adc_to_channel_PGM[] = {
     6,
     7,
     8,
-    9,
+    9,  
     10,
     11,
     12,
@@ -254,6 +250,7 @@ const uint8_t PROGMEM adc_to_channel_PGM[] = {
     14,
     15
 };
+
 
 #endif
 

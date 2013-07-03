@@ -37,7 +37,7 @@
     #define ADC_EVACT_gp  ADC_EVACT0_bp
 #endif
 #if !defined ADC_CH_GAINFAC_gp
-    #define ADC_CH_GAINFAC_gp  ADC_CH_GAINFAC0_bp
+    #define ADC_CH_GAINFAC_gp  ADC_CH_GAIN_1X_gc
 #endif
 #if !defined ADC_DMASEL_gp
     #define ADC_DMASEL_gp  ADC_DMASEL0_bp
@@ -297,6 +297,11 @@ void init()
         TCF1.CTRLB    = ( TCF1.CTRLB & ~TC1_WGMODE_gm ) | TC_WGMODE_NORMAL_gc;
         TCF1.CTRLD    = TC_EVACT_UPDOWN_gc | TC1_EVDLY_bm;
         TCF1.INTCTRLA = TC_OVFINTLVL_HI_gc;
+#endif
+
+#if defined(TCC2) || defined(TCD2)
+        // port C&D pwm uses EVCH7 for a div128 prescaled clock.
+        EVSYS.CH7MUX = EVSYS_CHMUX_PRESCALER_128_gc;
 #endif
         /*************************************/
         /* Init I/O ports */
