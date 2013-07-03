@@ -208,21 +208,21 @@ akafuino.bootloader.fuse5=0xFD
 
 ##############################################################
 
-ATxmega256A3.name=Lithne
+ATxmega256A3U.name=Lithne
 
-ATxmega256A3.build.mcu=atxmega256a3
-ATxmega256A3.build.f_cpu=32000000L
-ATxmega256A3.build.core=xmega
-ATxmega256A3.build.variant=Lithne
+ATxmega256A3U.build.mcu=atxmega256a3u
+ATxmega256A3U.build.f_cpu=32000000L
+ATxmega256A3U.build.core=xmega
+ATxmega256A3U.build.variant=Lithne
 
-ATxmega256A3.upload.protocol=avr109
-ATxmega256A3.upload.maximum_size=262144
-ATxmega256A3.upload.speed=115200
+ATxmega256A3U.upload.protocol=avr109
+ATxmega256A3U.upload.maximum_size=262144
+ATxmega256A3U.upload.speed=115200
 
-ATxmega256A3.bootloader.path=Lithne
-ATxmega256A3.bootloader.file=Lithne-boot.hex
-#ATxmega256A3.bootloader.unlock_bits=0x3F
-#ATxmega256A3.bootloader.lock_bits=0x3F
+ATxmega256A3U.bootloader.path=Lithne
+ATxmega256A3U.bootloader.file=Lithne-boot.hex
+#ATxmega256A3U.bootloader.unlock_bits=0x3F
+#ATxmega256A3U.bootloader.lock_bits=0x3F
 
  FUSE BITS
 # fuse0: JTAGUSERID
@@ -230,8 +230,8 @@ ATxmega256A3.bootloader.file=Lithne-boot.hex
 # fuse2: Boot Loader Reset
 # fuse4: JTAGEN
 # fuse5: BODLVL=1.6V
-#ATxmega256A3.bootloader.fuse0=0xFF
-#ATxmega256A3.bootloader.fuse1=0x00
-ATxmega256A3.bootloader.fuse2=0xFF
-#ATxmega256A3.bootloader.fuse4=0xFF
-ATxmega256A3.bootloader.fuse5=0xFF
+#ATxmega256A3U.bootloader.fuse0=0xFF
+#ATxmega256A3U.bootloader.fuse1=0x00
+ATxmega256A3U.bootloader.fuse2=0xFF
+#ATxmega256A3U.bootloader.fuse4=0xFF
+ATxmega256A3U.bootloader.fuse5=0xFF
