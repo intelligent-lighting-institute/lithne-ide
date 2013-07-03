@@ -210,7 +210,7 @@
        NOT_ON_TIMER   ,
     };
 
-    const TC0_t* PROGMEM timer_to_tc0_PGM[] = {
+    TC0_t* const PROGMEM timer_to_tc0_PGM[] = {
        NULL,
 
        &TCC0,
@@ -242,7 +242,7 @@
        NULL,
        };
 
-    const TC1_t* PROGMEM timer_to_tc1_PGM[] = {
+    TC1_t* const PROGMEM timer_to_tc1_PGM[] = {
        NULL,
 
        NULL,
@@ -273,6 +273,38 @@
        NULL,
        NULL,
     };
+	
+	TC2_t* const PROGMEM timer_to_tc2_PGM[] = {
+		NULL,
+
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		&TCC1,
+		&TCC1,
+
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		&TCD1,
+		&TCD1,
+
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		&TCE1,
+		&TCE1,
+		
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+		NULL,
+	};
 
     const uint8_t PROGMEM timer_to_channel_PGM[] = {
        NOT_ON_TIMER,
