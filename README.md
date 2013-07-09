@@ -1,8 +1,5 @@
 lithne-toolchain
 ================
-
-lithne-toolchain
-================
 This repository contains files to put in your Arduino 1.0.5 directory to make it compatible with the Lithne development boards.
 
 The Lithne boards have an atxmega256a3u as main processor and an atxmega32a4u as co-processor. 
@@ -16,10 +13,10 @@ This repo includes:
 
 To make your Arduino toolchain work with the Lithne development boards, perform the following steps:
 
-#. Install Arduino 1.0.5
-#. Remove WinAVR by deleting everything in <arduino dir>/hardware/tools/avr
-#. Download the Atmel AVR toolchain from http://www.atmel.com/tools/ATMELAVRTOOLCHAINFORWINDOWS.aspx
-#. Install the toolchain
-#. Copy the toolchain files from where you installed them, for example 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.2.939\avr8-gnu-toolchain', to <arduino dir>/hardware/tools/avr/
-#. Download the content of this repository as a zip file with the button on the right
-#. Extract the zip file to your Arduino directory
+1. Install Arduino 1.0.5
+2. Remove WinAVR by deleting everything in <arduino dir>/hardware/tools/avr
+3. Download the Atmel AVR toolchain from http://www.atmel.com/tools/ATMELAVRTOOLCHAINFORWINDOWS.aspx
+4. Install the toolchain
+5. Copy the toolchain files from where you installed them, for example 'C:\Program Files (x86)\Atmel\Atmel Toolchain\AVR8 GCC\Native\3.4.2.939\avr8-gnu-toolchain', to <arduino dir>/hardware/tools/avr/
+6. Download the content of this repository as a zip file with the button on the right
+7. Extract the zip file to your Arduino directory
