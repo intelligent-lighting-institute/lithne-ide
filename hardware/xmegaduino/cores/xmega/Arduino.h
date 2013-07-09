@@ -15,16 +15,27 @@
 extern "C"{
 #endif
 
+#ifndef HIGH
 #define HIGH 0x1
+#endif
+
+#ifndef LOW
 #define LOW  0x0
+#endif
 
 #define INPUT 0x0
 #define OUTPUT 0x1
 #define INPUT_PULLUP 0x2
 #define INPUT_PULLDOWN 0x3
 
+#ifndef true
 #define true 0x1
+#endif
+
+
+#ifndef false
 #define false 0x0
+#endif
 
 #define PI 3.1415926535897932384626433832795
 #define HALF_PI 1.5707963267948966192313216916398
@@ -56,6 +67,15 @@ extern "C"{
 #ifdef abs
 #undef abs
 #endif
+
+// undefine compiler.h defs if encountered
+#ifdef min
+#undef min
+#endif
+#ifdef max
+#undef max
+#endif
+
 
 #define min(a,b) ((a)<(b)?(a):(b))
 #define max(a,b) ((a)>(b)?(a):(b))
